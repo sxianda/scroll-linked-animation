@@ -1,0 +1,41 @@
+#container {
+    position: absolute;
+    top: 10px;
+    left: 200px;
+    width: 50px;
+    height: 500px;
+    overflow: auto;
+  }
+  
+  #content {
+    margin: 1px;
+    height: 5000px;
+    background: -webkit-linear-gradient(red, yellow);
+  }
+</style>
+<script src="https://rawgit.com/web-animations/web-animations-js/master/web-animations.min.js"></script>
+<div class="pulse" style="width: 150px;">
+  Hello world!
+</div>
+
+<div id="container" onscroll="trigger(this)">
+    <div id="content"></div>
+</div>
+<script id="jsbin-javascript">
+var elem = document.querySelector('.pulse');
+var animation = elem.animate({
+  opacity: [0.5, 1],
+  transform: ['scale(0.5)', 'scale(1)'],
+  background: ['cyan', 'pink'],
+}, {
+  direction: 'alternate',
+  duration: 5000,
+  iterations: Infinity,
+});
+
+animation.pause();
+
+function trigger(scrollable) {
+  animation.currentTime = scrollable.scrollTop;
+}
+</script>
