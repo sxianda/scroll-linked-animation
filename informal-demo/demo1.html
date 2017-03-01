@@ -1,3 +1,4 @@
+<head>
 <style>
 #container {
     position: absolute;
@@ -15,13 +16,6 @@
   }
 </style>
 <script src="https://rawgit.com/web-animations/web-animations-js/master/web-animations.min.js"></script>
-<div class="pulse" style="width: 150px;">
-  Hello world!
-</div>
-
-<div id="container" onscroll="trigger(this)">
-    <div id="content"></div>
-</div>
 <script id="jsbin-javascript">
 var elem = document.querySelector('.pulse');
 var animation = elem.animate({
@@ -40,3 +34,13 @@ function trigger(scrollable) {
   animation.currentTime = scrollable.scrollTop;
 }
 </script>
+</head>
+<body>
+<div class="pulse" style="width: 150px;">
+  Hello world!
+</div>
+
+<div id="container" onscroll="trigger(this)">
+    <div id="content"></div>
+</div>
+</body>
